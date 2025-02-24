@@ -11,10 +11,10 @@ package pkg123230059_bintoro_tugas1;
 public class Main {
     public static void main(String[] args) {
         
-        Novel novel1 = new Novel("Fate Series 2");
+        Book novel1 = new Novel("Fate Series 2");
         novel1.dibaca(100);
         
-        Majalah majalah1 = new Majalah("PBO");
+        Book majalah1 = new Majalah("PBO");
         majalah1.dibaca(100);
         
         novel1.dibaca(100);
@@ -27,7 +27,7 @@ interface Activity{
     void ditulis();
 } 
 
-abstract class Book {
+abstract class Book implements Activity{
     String nama;
     int halaman = 0;
     public Book(String inputNama){
@@ -38,7 +38,7 @@ abstract class Book {
     }
  }
 
-class Novel extends Book implements Activity {
+class Novel extends Book {
 
     public Novel(String inputNama) {
         super(inputNama);
@@ -63,7 +63,7 @@ class Novel extends Book implements Activity {
     
 }
 
-class Majalah extends Book implements Activity {
+class Majalah extends Book {
 
     public Majalah(String inputNama) {
         super(inputNama);
@@ -88,7 +88,7 @@ class Majalah extends Book implements Activity {
     
 }
 
-class Skripsi extends Book implements Activity {
+class Skripsi extends Book {
 
     public Skripsi(String inputNama) {
         super(inputNama);
